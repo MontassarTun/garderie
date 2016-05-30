@@ -1,0 +1,16 @@
+
+login:
+    path:     /login
+    defaults: { _controller: CommonAccessBundle:main:login }
+
+registration:
+    path:     /registration
+    defaults: { _controller: CommonAccessBundle:main:registration }
+
+renew_password:
+    path:     /renew_password
+    defaults: { _controller: CommonAccessBundle:main:renewPassword }
+
+change_password:
+    path:     /change_password
+    defaults: { _controller: CommonAccessBundle:main:changePassword }
