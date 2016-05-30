@@ -1,0 +1,20 @@
+
+add_plug:
+    path:     /admin_space/add_plug
+    defaults: { _controller: BackEndKidsManagementBundle:main:addPlug }
+
+recovering_plug:
+    path:     /admin_space/recovering_plug
+    defaults: { _controller: BackEndKidsManagementBundle:main:recoveringPlug }
+
+update_plug:
+    path:     /admin_space/update_plug
+    defaults: { _controller: BackEndKidsManagementBundle:main:updatePlug }
+
+delete_plug:
+    path:     /admin_space/delete_plug
+    defaults: { _controller: BackEndKidsManagementBundle:main:deletePlug }
+
+payment:
+    path: /admin_space/payment
+    defaults: { _controller: BackEndKidsManagementBundle:main:payment }

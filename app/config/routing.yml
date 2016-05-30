@@ -1,0 +1,8 @@
+common_access:
+    resource: "@CommonAccessBundle/Resources/config/routing.yml"
+    prefix:   /
+
+back_end_kids_management:
+    resource: "@BackEndKidsManagementBundle/Resources/config/routing.yml"
+    prefix:   /
+
