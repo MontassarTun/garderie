@@ -6,3 +6,10 @@ back_end_kids_management:
     resource: "@BackEndKidsManagementBundle/Resources/config/routing.yml"
     prefix:   /
 
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+redirect_login:
+    path: /
+    defaults: {_controller:CommonAccessBundle:main:redirectLogin}
+

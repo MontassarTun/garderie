@@ -1,7 +1,8 @@
-{% extends "BackEndKidsManagementBundle:views:gabarit.html.twig" %}
+{% extends "BackEndKidsManagementBundle::gabarit.html.twig" %}
 
 {% block title %}BackEndKidsManagementBundle:main:addPlug{% endblock %}
 
 {% block secondchild %}
 <h1>Welcome to the main:addPlug page</h1>
+    <a href="{{ path('fos_user_security_logout') }}">déconnexion</a>
 {% endblock %}

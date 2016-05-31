@@ -5,8 +5,8 @@ parameters:
     database_name: garderie
     database_user: root
     database_password: null
-    mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    mailer_transport: gmail
+    mailer_host:
+    mailer_user: missaoui.symfony.dev@gmail.com
+    mailer_password: comptetanit
     secret: 4b7c8a97fedb177145e19a070e1ecf8f1e670cfd

@@ -33,5 +33,10 @@ class mainController extends Controller
             // ...
         ));
     }
+    
+    public function redirectLoginAction()
+    {
+        return $this->redirect($this->generateUrl('add_plug'));
+    }
 
 }
