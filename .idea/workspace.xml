@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc97243b-66ac-4182-84e6-33dde06cba64" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Common/AccessBundle/Entity/Parent.php" afterPath="$PROJECT_DIR$/src/Common/AccessBundle/Entity/ParentOfKids.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Common/AccessBundle/Repository/ParentRepository.php" afterPath="$PROJECT_DIR$/src/Common/AccessBundle/Repository/ParentOfKidsRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="garderie.iws" />
@@ -675,12 +673,20 @@
       <workItem from="1464651922291" duration="95000" />
       <workItem from="1464652052041" duration="11727000" />
       <workItem from="1464664246689" duration="350000" />
-      <workItem from="1464736899428" duration="8823000" />
+      <workItem from="1464736899428" duration="8844000" />
     </task>
+    <task id="LOCAL-00001" summary="sd">
+      <created>1464746006841</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1464746006841</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20995000" />
+    <option name="totallyTimeSpent" value="21016000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-22" y="-22" width="1410" height="772" extended-state="6" />
@@ -736,6 +742,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sd" />
+    <option name="LAST_COMMIT_MESSAGE" value="sd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
