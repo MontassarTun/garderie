@@ -5,12 +5,12 @@ namespace Common\AccessBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Parent
+ * ParentOfKids
  *
- * @ORM\Table(name="parent")
- * @ORM\Entity(repositoryClass="Common\AccessBundle\Repository\ParentRepository")
+ * @ORM\Table(name="parent_of_kids")
+ * @ORM\Entity(repositoryClass="Common\AccessBundle\Repository\ParentOfKidsRepository")
  */
-class Parent
+class ParentOfKids
 {
     /**
      * @var int
@@ -72,7 +72,7 @@ class Parent
      *
      * @param string $name
      *
-     * @return Parent
+     * @return ParentOfKids
      */
     public function setName($name)
     {
@@ -96,7 +96,7 @@ class Parent
      *
      * @param string $lastFamilyName
      *
-     * @return Parent
+     * @return ParentOfKids
      */
     public function setLastFamilyName($lastFamilyName)
     {
@@ -120,7 +120,7 @@ class Parent
      *
      * @param string $email
      *
-     * @return Parent
+     * @return ParentOfKids
      */
     public function setEmail($email)
     {
@@ -144,7 +144,7 @@ class Parent
      *
      * @param string $address
      *
-     * @return Parent
+     * @return ParentOfKids
      */
     public function setAddress($address)
     {
@@ -168,7 +168,7 @@ class Parent
      *
      * @param integer $kidsNumber
      *
-     * @return Parent
+     * @return ParentOfKids
      */
     public function setKidsNumber($kidsNumber)
     {
