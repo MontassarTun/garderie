@@ -1,0 +1,97 @@
+<?php
+
+namespace BackEnd\ServicesManagementBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Pack
+ *
+ * @ORM\Table(name="pack")
+ * @ORM\Entity(repositoryClass="BackEnd\ServicesManagementBundle\Repository\PackRepository")
+ */
+class Pack
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50, unique=true)
+     */
+    private $name;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="amount", type="float")
+     */
+    private $amount;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Pack
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set amount
+     *
+     * @param float $amount
+     *
+     * @return Pack
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return float
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+}
+

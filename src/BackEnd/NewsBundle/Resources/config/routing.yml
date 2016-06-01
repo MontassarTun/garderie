@@ -1,0 +1,15 @@
+back_end_news_homepage:
+    path:     /
+    defaults: { _controller: BackEndNewsBundle:Default:index }
+
+add_news:
+    path:     /admin_space/add_news
+    defaults: { _controller: BackEndNewsBundle:main:addNews }
+
+recovering_news:
+    path:     /admin_space/recovering_news
+    defaults: { _controller: BackEndNewsBundle:main:recoveringNews }
+
+delete_news:
+    path:     /admin_space/delete_news
+    defaults: { _controller: BackEndNewsBundle:main:deleteNews }

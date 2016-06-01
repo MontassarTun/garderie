@@ -1,0 +1,11 @@
+add_service:
+    path:     /admin_space/add_service
+    defaults: { _controller: BackEndServicesManagementBundle:main:addService }
+
+recovering_service:
+    path:     /admin_space/recovering_service
+    defaults: { _controller: BackEndServicesManagementBundle:main:recoveringService }
+
+delete_service:
+    path:     /admin_space/delete_service
+    defaults: { _controller: BackEndServicesManagementBundle:main:deleteService }

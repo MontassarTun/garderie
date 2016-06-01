@@ -1,0 +1,4 @@
+services:
+#    back_end_services_management.example:
+#        class: BackEnd\ServicesManagementBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new BackEnd\KidsManagementBundle\BackEndKidsManagementBundle(),
             new Common\AccessBundle\CommonAccessBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new BackEnd\ServicesManagementBundle\BackEndServicesManagementBundle(),
+            new BackEnd\NewsBundle\BackEndNewsBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
