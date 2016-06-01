@@ -22,6 +22,11 @@ class Plug
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity="BackEnd\KidsManagementBundle\Entity\Kid", mappedBy="Plug")
+     */
+    private $Kid;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="day", type="date", nullable=true)
@@ -124,5 +129,28 @@ class Plug
     {
         return $this->work;
     }
-}
 
+    /**
+     * Set kid
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Kid $kid
+     *
+     * @return Plug
+     */
+    public function setKid(\BackEnd\KidsManagementBundle\Entity\Kid $kid = null)
+    {
+        $this->Kid = $kid;
+    
+        return $this;
+    }
+
+    /**
+     * Get kid
+     *
+     * @return \BackEnd\KidsManagementBundle\Entity\Kid
+     */
+    public function getKid()
+    {
+        return $this->Kid;
+    }
+}

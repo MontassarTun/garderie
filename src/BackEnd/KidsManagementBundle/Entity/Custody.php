@@ -22,6 +22,11 @@ class Custody
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="BackEnd\KidsManagementBundle\Entity\Kid")
+     */
+    private $Kid;
+    
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="date_entry", type="datetime", nullable=true)
@@ -92,5 +97,29 @@ class Custody
     public function getDateRelease()
     {
         return $this->dateRelease;
+    }
+
+    /**
+     * Set kid
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Kid $kid
+     *
+     * @return Custody
+     */
+    public function setKid(\BackEnd\KidsManagementBundle\Entity\Kid $kid = null)
+    {
+        $this->Kid = $kid;
+    
+        return $this;
+    }
+
+    /**
+     * Get kid
+     *
+     * @return \BackEnd\KidsManagementBundle\Entity\Kid
+     */
+    public function getKid()
+    {
+        return $this->Kid;
     }
 }

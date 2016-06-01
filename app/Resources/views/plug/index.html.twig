@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Plug list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Day</th>
+                <th>Behavior</th>
+                <th>Work</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for plug in plugs %}
+            <tr>
+                <td><a href="{{ path('admin_space_show', { 'id': plug.id }) }}">{{ plug.id }}</a></td>
+                <td>{% if plug.day %}{{ plug.day|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ plug.behavior }}</td>
+                <td>{% if plug.work %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin_space_show', { 'id': plug.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin_space_edit', { 'id': plug.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_space_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -8,7 +8,6 @@ class mainController extends Controller
 {
     public function loginAction()
     {
-        $jh = 'df';
         return $this->render('CommonAccessBundle:main:login.html.twig', array(
             // ...
         ));
@@ -38,6 +37,13 @@ class mainController extends Controller
     public function redirectLoginAction()
     {
         return $this->redirect($this->generateUrl('add_plug'));
+    }
+
+    public function testAction()
+    {
+        return $this->render('CommonAccessBundle:main:ze.html.twig', array(
+            // ...
+        ));
     }
 
 }

@@ -22,6 +22,16 @@ class Payment
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="BackEnd\KidsManagementBundle\Entity\Kid", inversedBy="Payment")
+     */
+    private $kid;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Common\AccessBundle\Entity\ParentOfKids", inversedBy="Payment")
+     */
+    private $ParentOfKids;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="month", type="string", length=10)
@@ -93,5 +103,52 @@ class Payment
     {
         return $this->amount;
     }
-}
 
+    /**
+     * Set parentOfKids
+     *
+     * @param \Common\AccessBundle\Entity\ParentOfKids $parentOfKids
+     *
+     * @return Payment
+     */
+    public function setParentOfKids(\Common\AccessBundle\Entity\ParentOfKids $parentOfKids = null)
+    {
+        $this->ParentOfKids = $parentOfKids;
+    
+        return $this;
+    }
+
+    /**
+     * Get parentOfKids
+     *
+     * @return \Common\AccessBundle\Entity\ParentOfKids
+     */
+    public function getParentOfKids()
+    {
+        return $this->ParentOfKids;
+    }
+
+    /**
+     * Set kid
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Kid $kid
+     *
+     * @return Payment
+     */
+    public function setKid(\BackEnd\KidsManagementBundle\Entity\Kid $kid = null)
+    {
+        $this->kid = $kid;
+    
+        return $this;
+    }
+
+    /**
+     * Get kid
+     *
+     * @return \BackEnd\KidsManagementBundle\Entity\Kid
+     */
+    public function getKid()
+    {
+        return $this->kid;
+    }
+}

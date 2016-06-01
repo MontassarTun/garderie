@@ -22,6 +22,21 @@ class Kid
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="BackEnd\KidsManagementBundle\Entity\Payment", mappedBy="Kid")
+     */
+    private $Payment;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Common\AccessBundle\Entity\ParentOfKids", inversedBy="Kids")
+     */
+    private $ParentOfKids;
+
+    /**
+     * @ORM\OneToOne(targetEntity="BackEnd\KidsManagementBundle\Entity\Plug", inversedBy="Kid")
+     */
+    private $Plug;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=50)
@@ -55,13 +70,6 @@ class Kid
      * @ORM\Column(name="age_month", type="integer")
      */
     private $ageMonth;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="address", type="string", length=150)
-     */
-    private $address;
     
     /**
      * Get id
@@ -170,27 +178,115 @@ class Kid
     }
 
     /**
-     * Set address
+     * Set gender
      *
-     * @param string $address
+     * @param string $gender
      *
      * @return Kid
      */
-    public function setAddress($address)
+    public function setGender($gender)
     {
-        $this->address = $address;
+        $this->gender = $gender;
     
         return $this;
     }
 
     /**
-     * Get address
+     * Get gender
      *
      * @return string
      */
-    public function getAddress()
+    public function getGender()
     {
-        return $this->address;
+        return $this->gender;
+    }
+
+    /**
+     * Set plug
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Plug $plug
+     *
+     * @return Kid
+     */
+    public function setPlug(\BackEnd\KidsManagementBundle\Entity\Plug $plug = null)
+    {
+        $this->Plug = $plug;
+    
+        return $this;
+    }
+
+    /**
+     * Get plug
+     *
+     * @return \BackEnd\KidsManagementBundle\Entity\Plug
+     */
+    public function getPlug()
+    {
+        return $this->Plug;
+    }
+
+    /**
+     * Set parentOfKids
+     *
+     * @param \Common\AccessBundle\Entity\ParentOfKids $parentOfKids
+     *
+     * @return Kid
+     */
+    public function setParentOfKids(\Common\AccessBundle\Entity\ParentOfKids $parentOfKids = null)
+    {
+        $this->ParentOfKids = $parentOfKids;
+    
+        return $this;
+    }
+
+    /**
+     * Get parentOfKids
+     *
+     * @return \Common\AccessBundle\Entity\ParentOfKids
+     */
+    public function getParentOfKids()
+    {
+        return $this->ParentOfKids;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Payment = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add payment
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Payment $payment
+     *
+     * @return Kid
+     */
+    public function addPayment(\BackEnd\KidsManagementBundle\Entity\Payment $payment)
+    {
+        $this->Payment[] = $payment;
+    
+        return $this;
+    }
+
+    /**
+     * Remove payment
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Payment $payment
+     */
+    public function removePayment(\BackEnd\KidsManagementBundle\Entity\Payment $payment)
+    {
+        $this->Payment->removeElement($payment);
+    }
+
+    /**
+     * Get payment
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPayment()
+    {
+        return $this->Payment;
     }
 }
-

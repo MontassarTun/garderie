@@ -22,6 +22,21 @@ class ParentOfKids
     private $id;
 
     /**
+     * @ORM\ManyTOOne(targetEntity="BackEnd\ServicesManagementBundle\Entity\Pack")
+     */
+    private $Pack;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="BackEnd\KidsManagementBundle\Entity\Kid", mappedBy="ParentOfKids")
+     */
+    private $Kids;
+
+    /**
+     * @ORM\OneToMany(targetEntity="BackEnd\KidsManagementBundle\Entity\Payment", mappedBy="ParentOfKids")
+     */
+    private $Payment;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=50)
@@ -186,5 +201,103 @@ class ParentOfKids
     {
         return $this->kidsNumber;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Kids = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add kid
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Kid $kid
+     *
+     * @return ParentOfKids
+     */
+    public function addKid(\BackEnd\KidsManagementBundle\Entity\Kid $kid)
+    {
+        $this->Kids[] = $kid;
+    
+        return $this;
+    }
+
+    /**
+     * Remove kid
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Kid $kid
+     */
+    public function removeKid(\BackEnd\KidsManagementBundle\Entity\Kid $kid)
+    {
+        $this->Kids->removeElement($kid);
+    }
+
+    /**
+     * Get kids
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getKids()
+    {
+        return $this->Kids;
+    }
+
+    /**
+     * Add payment
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Payment $payment
+     *
+     * @return ParentOfKids
+     */
+    public function addPayment(\BackEnd\KidsManagementBundle\Entity\Payment $payment)
+    {
+        $this->Payment[] = $payment;
+    
+        return $this;
+    }
+
+    /**
+     * Remove payment
+     *
+     * @param \BackEnd\KidsManagementBundle\Entity\Payment $payment
+     */
+    public function removePayment(\BackEnd\KidsManagementBundle\Entity\Payment $payment)
+    {
+        $this->Payment->removeElement($payment);
+    }
+
+    /**
+     * Get payment
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPayment()
+    {
+        return $this->Payment;
+    }
+
+    /**
+     * Set pack
+     *
+     * @param \BackEnd\ServicesManagementBundle\Entity\Pack $pack
+     *
+     * @return ParentOfKids
+     */
+    public function setPack(\BackEnd\ServicesManagementBundle\Entity\Pack $pack = null)
+    {
+        $this->Pack = $pack;
+    
+        return $this;
+    }
+
+    /**
+     * Get pack
+     *
+     * @return \BackEnd\ServicesManagementBundle\Entity\Pack
+     */
+    public function getPack()
+    {
+        return $this->Pack;
+    }
+}

@@ -22,6 +22,11 @@ class Pack
     private $id;
 
     /**
+     * @ORM\ManyToMany(targetEntity="BackEnd\ServicesManagementBundle\Entity\Service")
+     */
+    private $Service;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=50, unique=true)
@@ -93,5 +98,45 @@ class Pack
     {
         return $this->amount;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->Service = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add service
+     *
+     * @param \BackEnd\ServicesManagementBundle\Entity\Service $service
+     *
+     * @return Pack
+     */
+    public function addService(\BackEnd\ServicesManagementBundle\Entity\Service $service)
+    {
+        $this->Service[] = $service;
+    
+        return $this;
+    }
+
+    /**
+     * Remove service
+     *
+     * @param \BackEnd\ServicesManagementBundle\Entity\Service $service
+     */
+    public function removeService(\BackEnd\ServicesManagementBundle\Entity\Service $service)
+    {
+        $this->Service->removeElement($service);
+    }
+
+    /**
+     * Get service
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getService()
+    {
+        return $this->Service;
+    }
+}

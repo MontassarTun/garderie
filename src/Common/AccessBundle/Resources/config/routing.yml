@@ -9,3 +9,7 @@ renew_password:
 change_password:
     path:     /change_password
     defaults: { _controller: CommonAccessBundle:main:changePassword }
+
+test:
+    path: /ze
+    defaults: { _controller: CommonAccessBundle:main:test }
