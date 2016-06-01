@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="17">
     <extensionMap>
+      <mapping pattern="qs" type="PLAIN_TEXT" />
       <mapping pattern="ze" type="Twig" />
     </extensionMap>
   </component>
