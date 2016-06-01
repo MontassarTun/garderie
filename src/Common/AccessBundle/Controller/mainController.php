@@ -8,6 +8,7 @@ class mainController extends Controller
 {
     public function loginAction()
     {
+        $jh = 'df';
         return $this->render('CommonAccessBundle:main:login.html.twig', array(
             // ...
         ));
